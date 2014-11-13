@@ -18,6 +18,6 @@ public class Node {
 	//endregion
 
 	//region Public methods
-	public <T> Port<T> getPort(String name, Type<T> type);
+
 	//endregion
 }

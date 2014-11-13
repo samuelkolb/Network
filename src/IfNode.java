@@ -6,7 +6,7 @@
 public class IfNode {
 
 	//region Variables
-	private final Port<>
+
 	//endregion
 
 	//region Construction
