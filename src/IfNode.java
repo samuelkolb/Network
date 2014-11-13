@@ -3,7 +3,7 @@
  *
  * @author Samuel Kolb
  */
-public class IfNode {
+public class IfNode extends Node {
 
 	//region Variables
 
@@ -11,6 +11,9 @@ public class IfNode {
 
 	//region Construction
 
+	public IfNode() {
+		addPort("Condition", Port.Direction.BOTH, );
+	}
 	//endregion
 
 	//region Public methods
