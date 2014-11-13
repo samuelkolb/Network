@@ -3,17 +3,11 @@
  *
  * @author Samuel Kolb
  */
-public class Container {
+public interface Container<T> {
 
-	//region Variables
-
-	//endregion
-
-	//region Construction
-
-	//endregion
-
-	//region Public methods
-
-	//endregion
+	/**
+	 * Retrieves the containers element
+	 * @return	The element
+	 */
+	public T get();
 }

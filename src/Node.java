@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * Created by samuelkolb on 13/11/14.
  *
@@ -14,6 +18,6 @@ public class Node {
 	//endregion
 
 	//region Public methods
-
+	public <T> Port<T> getPort(String name, Type<T> type);
 	//endregion
 }

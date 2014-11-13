@@ -3,7 +3,7 @@
  *
  * @author Samuel Kolb
  */
-public class Type {
+public abstract class Type<T> {
 
 	//region Variables
 
@@ -14,6 +14,6 @@ public class Type {
 	//endregion
 
 	//region Public methods
-
+	public abstract Value<T> createValue(T content);
 	//endregion
 }
