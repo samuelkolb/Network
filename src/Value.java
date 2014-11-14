@@ -1,35 +1,32 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by samuelkolb on 13/11/14.
  *
  * @author Samuel Kolb
  */
-public class Value<T> implements Container<T> {
+public abstract class Value<T extends Type, I extends Value<T, I>> {
 
 	//region Variables
-	private final Type<T> type;
+	private final Map<FunctionDescriptor<T>, Function<T, I>> functions = new HashMap<>();
 
-	public Type<T> getType() {
-		return type;
+	public void addFunction(String name, Function<T, I> function) {
+		functions.put(new FunctionDescriptor<>(getType(), name), function);
 	}
-
-	private final T value;
-
 	//endregion
 
 	//region Construction
+	protected Value() {
 
-	public Value(Type<T> type, T value) {
-		this.type = type;
-		this.value = value;
 	}
-
 	//endregion
 
 	//region Public methods
+	public abstract T getType();
 
-	@Override
-	public T get() {
-		return this.value;
+	public Function<T, I> getFunction(String name) {
+		return functions.get(new FunctionDescriptor<>(getType(), name));
 	}
 
 	//endregion
